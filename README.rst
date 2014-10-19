@@ -23,6 +23,6 @@ And then, you could find more than one process in backgroud at the same time::
 Modify crontab with Process Count Supervisor::
 
   crontab -e
-  */1 * * * * /bin/pcs -m 1 /home/yourname/sleep.sh > /dev/null 2>&1
+  */1 * * * * /home/yourname/pcs.py -m 1 /home/yourname/sleep.sh > /dev/null 2>&1
 
 Finlly, you could find only one process in backgroud at the same time.
