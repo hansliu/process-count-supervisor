@@ -14,13 +14,15 @@ Create a bash to sleep 200 seconds, it's meant run more than one minute::
 Create crontab run every minute::
 
   crontab -e
-  */1 * * * * /bin/bash /home/yourname/sleep.sh
+  */1 * * * * /bin/bash /home/yourname/sleep.sh > /dev/null 2>&1
 
-And then you will run more than one process in backgroud at the same time::
+And then, you could find more than one process in backgroud at the same time::
 
   ps aux | grep '/home/yourname/sleep.sh'
 
 Modify crontab with Process Count Supervisor::
 
   crontab -e
-  */1 * * * * /bin/pcs /home/yourname/sleep.sh -m 1
+  */1 * * * * /bin/pcs -m 1 /home/yourname/sleep.sh > /dev/null 2>&1
+
+Finlly, you could find only one process in backgroud at the same time.
