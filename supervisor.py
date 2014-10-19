@@ -127,7 +127,6 @@ class ProcessCountSupervisor(object):
       pattern = self.__process_command.strip()
     return pattern
 
-
   def get_process_count(self):
     return self.__process_cur_count
 
